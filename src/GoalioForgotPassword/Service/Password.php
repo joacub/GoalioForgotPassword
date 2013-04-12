@@ -83,7 +83,7 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         $subject = $this->getOptions()->getResetEmailSubjectLine();
         $contentType = $this->getOptions()->getContentType();
 
-        $message = $mailService->{"create{$contentType}TextMessage"}($from, $to, $subject, 'goalio-forgot-password/email/forgot', array('record' => $model));
+        $message = $mailService->{"create{$contentType}Message"}($from, $to, $subject, 'goalio-forgot-password/email/forgot', array('record' => $model));
 
         $mailService->send($message);
     }
