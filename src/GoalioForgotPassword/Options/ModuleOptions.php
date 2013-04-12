@@ -31,6 +31,11 @@ class ModuleOptions extends AbstractOptions implements
      * @var int
      */
     protected $resetExpire = 86400;
+    
+    /**
+     * @var string
+     */
+    protected $contentType = 'Html';
 
 
     public function getEmailFromAddress() {
@@ -59,7 +64,12 @@ class ModuleOptions extends AbstractOptions implements
         $this->emailTransport = $emailTransport;
         return $this;
     }
-
+    
+    public function setContentType($contentType) {
+    	$this->contentType = ucfirst($contentType);
+    	return $this;
+    }
+    
 	/**
      * set user entity class name
      *
@@ -85,6 +95,11 @@ class ModuleOptions extends AbstractOptions implements
 	public function setResetExpire($resetExpire) {
         $this->resetExpire = $resetExpire;
         return $this;
+    }
+    
+    public function getContentType()
+    {
+    	return $this->contentType;
     }
 
 	public function getResetExpire() {
