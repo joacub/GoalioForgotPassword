@@ -18,8 +18,8 @@
         "php": ">=5.3.3",
         "goalio/goalio-mailservice": "0.*",
         "zendframework/zendframework": "2.*",
-        "zf-commons/zfc-base": "0.*",
-        "zf-commons/zfc-user": "0.*"
+        "zf-commons/zfc-base": "*",
+        "zf-commons/zfc-user": "*"
     },
     "autoload": {
         "psr-0": {
