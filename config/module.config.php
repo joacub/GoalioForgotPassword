@@ -1,12 +1,7 @@
 <?php
 return array(
     'view_manager' => array(
-        'template_path_stack' => array(
-            'goalioforgotpassword' => __DIR__ . '/../view',
-        ),
-        'template_map' => array(
-            'zfc-user/user/login' => __DIR__ . '/../view/zfc-user/user/login.phtml',
-        ),
+        'template_map' => include __DIR__  .'/../template_map.php',
     ),
     'controllers' => array(
         'invokables' => array(
