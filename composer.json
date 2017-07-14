@@ -16,10 +16,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "goalio/goalio-mailservice": "0.*",
-        "zendframework/zendframework": "2.*",
-        "zf-commons/zfc-base": "*",
-        "zf-commons/zfc-user": "*"
+        "goalio/goalio-mailservice": "0.*"    
     },
     "autoload": {
         "psr-0": {
