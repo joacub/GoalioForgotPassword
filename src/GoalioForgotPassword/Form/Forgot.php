@@ -3,8 +3,8 @@
 namespace GoalioForgotPassword\Form;
 
 use Zend\Form\Element;
-use ZfcBase\Form\ProvidesEventsForm;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
+use ZfcUser\Form\ProvidesEventsForm;
 
 class Forgot extends ProvidesEventsForm
 {

@@ -2,15 +2,18 @@
 
 namespace GoalioForgotPassword\Service;
 
+use Interop\Container\ContainerInterface;
+use Tracy\Debugger;
 use Zend\Mail\Transport\TransportInterface;
 
+use Zend\ServiceManager\Factory\FactoryInterface;
+use ZfcUser\EventManager\EventProvider;
 use ZfcUser\Options\PasswordOptionsInterface;
 
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
 use Zend\ServiceManager\ServiceManager;
 
-use Zend\ServiceManager\ServiceManagerAwareInterface;
 
 use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use GoalioForgotPassword\Mapper\Password as PasswordMapper;
@@ -18,9 +21,8 @@ use GoalioForgotPassword\Mapper\Password as PasswordMapper;
 use Zend\Crypt\Password\Bcrypt;
 use Zend\Form\Form;
 
-use ZfcBase\EventManager\EventProvider;
 
-class Password extends EventProvider implements ServiceManagerAwareInterface
+class Password extends EventProvider
 {
     /**
      * @var ModelMapper
@@ -204,5 +206,12 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
     {
         $this->zfcUserOptions = $zfcUserOptions;
         return $this;
+    }
+
+    protected $serviceManager;
+    public function __construct(ContainerInterface $container)
+    {
+        $this->serviceManager = $container;
+        $this->serviceLocator = $container;
     }
 }

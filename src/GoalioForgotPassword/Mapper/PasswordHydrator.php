@@ -2,8 +2,8 @@
 
 namespace GoalioForgotPassword\Mapper;
 
-use Zend\Stdlib\Hydrator\ClassMethods;
 use GoalioForgotPassword\Entity\Password as Entity;
+use Zend\Hydrator\ClassMethods;
 
 class PasswordHydrator extends ClassMethods
 {

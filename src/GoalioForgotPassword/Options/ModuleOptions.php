@@ -105,4 +105,9 @@ class ModuleOptions extends AbstractOptions implements
 	public function getResetExpire() {
         return $this->resetExpire;
     }
+
+    public function getEnableDefaultEntities()
+    {
+        return false;
+    }
 }

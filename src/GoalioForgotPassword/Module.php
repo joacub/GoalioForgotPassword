@@ -1,6 +1,7 @@
 <?php
 namespace GoalioForgotPassword;
 
+use GoalioForgotPassword\Service\Password;
 use Zend\Loader\StandardAutoloader;
 use Zend\Loader\AutoloaderFactory;
 
@@ -22,11 +23,12 @@ class Module {
 
     public function getServiceConfig() {
         return array(
-            'invokables' => array(
-                'goalioforgotpassword_password_service'            => 'GoalioForgotPassword\Service\Password',
-            ),
-
             'factories' => array(
+
+                'goalioforgotpassword_password_service'            => function($sm) {
+                    $password = new Password($sm);
+                    return $password;
+                },
 
                 'goalioforgotpassword_module_options' => function ($sm) {
                     $config = $sm->get('Config');
