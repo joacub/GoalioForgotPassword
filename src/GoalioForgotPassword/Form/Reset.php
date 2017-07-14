@@ -4,8 +4,8 @@ namespace GoalioForgotPassword\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element;
-use ZfcBase\Form\ProvidesEventsForm;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
+use ZfcUser\Form\ProvidesEventsForm;
 
 class Reset extends ProvidesEventsForm
 {
