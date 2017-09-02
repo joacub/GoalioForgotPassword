@@ -84,7 +84,7 @@ class ForgotController extends AbstractActionController
                     $service->sendProcessForgotRequest($user->getId(), $email);
                 }
 
-                $vm = new ViewModel(array('email' => $email));
+                $vm = new ViewModel(array('email' => $email, 'user' => $user));
                 $vm->setTemplate('goalio-forgot-password/forgot/sent');
                 return $vm;
             } else {
